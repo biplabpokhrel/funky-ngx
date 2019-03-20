@@ -1,0 +1,12 @@
+.funky-ngx-tab-body{
+    position: absolute;
+    left: 0;
+    padding: 0 15px;
+    height: 0;
+    overflow: hidden;
+}
+
+.funky-ngx-tab-group :active .funky-ngx-tab-body{
+    height: 100%;
+    overflow: visible;
+}

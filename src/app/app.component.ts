@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'funky-ngx-app';
+  tabIndex(index: number) {
+    console.log(index);
+  }
 }

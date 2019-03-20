@@ -1,0 +1,10 @@
+.funky-ngx-tab{
+    display: inline-block;
+    margin-right: 1px;
+    list-style-type: none;
+    font-size: 14px;
+}
+
+.funky-ngx-tab:last-child{
+    margin-right: 0;
+}

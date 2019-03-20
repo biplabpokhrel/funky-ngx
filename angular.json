@@ -129,6 +129,41 @@
           }
         }
       }
+    },
+    "funky-ngx": {
+      "root": "projects/funky-ngx",
+      "sourceRoot": "projects/funky-ngx/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/funky-ngx/tsconfig.lib.json",
+            "project": "projects/funky-ngx/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/funky-ngx/src/test.ts",
+            "tsConfig": "projects/funky-ngx/tsconfig.spec.json",
+            "karmaConfig": "projects/funky-ngx/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/funky-ngx/tsconfig.lib.json",
+              "projects/funky-ngx/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "funky-ngx-app"

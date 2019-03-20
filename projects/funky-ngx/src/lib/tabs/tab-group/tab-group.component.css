@@ -1,0 +1,68 @@
+.funky-ngx-tab-group{
+    position: relative;
+    margin: 0;
+    padding: 0px;
+    font-size: 0;
+}
+
+/* .funky-ngx-tab-group .funky-ngx-tab{
+    display: inline-block;
+    margin-right: 1px;
+    list-style-type: none;
+    font-size: 14px;
+}
+
+.funky-ngx-tab-group .funky-ngx-tab:last-child{
+    margin-right: 0;
+} */
+
+/* .funky-ngx-tab-group .funky-ngx-tab .funky-ngx-tab-header{
+    display: block;
+    padding: 10px 15px;
+    background: rgba(219,219,219,1);
+    text-decoration: none;
+    color:#4B5056;
+    transition: background 0.5s ease;
+} */
+
+/* .funky-ngx-tab-group .funky-ngx-tab-header + .funky-ngx-tab-body{
+    position: absolute;
+    left: 0;
+    padding: 0 15px;
+    height: 0;
+    overflow: hidden;
+} */
+
+/* .funky-ngx-tab-group :hover .funky-ngx-tab-header{
+    background: rgba(250, 249, 249, 0);
+} */
+
+
+/* .funky-ngx-tab-group :active .funky-ngx-tab-header{
+    background: rgba(219,219,219,0);
+} */
+
+/* .funky-ngx-tab-group :active .funky-ngx-tab-header + .funky-ngx-tab-body{
+    height: 100%;
+    overflow: visible;
+} */
+
+
+@media (max-width: 768px) {
+
+    /* .funky-ngx-tab-group .funky-ngx-tab-header {
+        width:100%;
+    } */
+
+    .funky-ngx-tab-group .funky-ngx-tab-header + .funky-ngx-tab-body {
+        position: static;
+        float:left;
+    }
+
+    .funky-ngx-tab-group .funky-ngx-tab{
+        display: block;
+        overflow: hidden;
+        margin: 0 0 1px 0;
+    }
+
+}

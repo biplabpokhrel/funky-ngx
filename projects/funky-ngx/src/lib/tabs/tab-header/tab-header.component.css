@@ -1,0 +1,25 @@
+
+.funky-ngx-tab-header{
+    display: block;
+    padding: 10px 15px;
+    background: rgba(219,219,219,1);
+    text-decoration: none;
+    color:#4B5056;
+    transition: background 0.5s ease;
+
+    /* position: absolute;
+    left: 0;
+    padding: 0 15px;
+    height: 0;
+    overflow: hidden; */
+}
+
+.funky-ngx-tab-group :hover .funky-ngx-tab-header{
+    background: rgba(250, 249, 249, 0);
+}
+
+@media (max-width: 768px) {
+    .funky-ngx-tab-group .funky-ngx-tab-header {
+        width:100%;
+    }    
+}

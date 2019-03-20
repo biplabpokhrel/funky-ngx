@@ -17,6 +17,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "funky-ngx": [
+        "dist/funky-ngx"
+      ],
+      "funky-ngx/*": [
+        "dist/funky-ngx/*"
+      ]
+    }
   }
 }
