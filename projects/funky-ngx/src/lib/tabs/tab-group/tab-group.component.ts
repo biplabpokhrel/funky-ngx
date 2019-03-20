@@ -10,7 +10,7 @@ import {
   EventEmitter,
   HostBinding
 } from '@angular/core';
-
+import { take  } from 'rxjs/operators';
 import { TabComponent } from '../tab/tab.component';
 import { FunkyTabService } from '../services/funky-tab.service';
 @Component({
@@ -34,12 +34,18 @@ export class TabGroupComponent implements OnInit, AfterContentChecked {
   ngAfterContentChecked() {
     this._tabs.forEach((tab, index) => tab.currentIndex = index);
     this.tabService._selectedTabIndex
+    .pipe(take(1))
     .subscribe((index: number) => {
       this._tabs.forEach((tab, i: number) => {
-        // if (index === i) {
-        //   tab._content.
-        //   this.cssClass = 'funky-ngx-tab-group active';
-        // }
+        if (index === i) {
+          tab.show();
+          tab._content.show();
+          tab._head.show();
+        } else {
+          tab._content.hide();
+          tab._head.hide();
+          tab.hide();
+        }
       });
       this.selectedIndexChanged.next(index);
     });

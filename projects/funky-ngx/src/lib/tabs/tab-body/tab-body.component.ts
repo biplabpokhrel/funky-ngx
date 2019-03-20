@@ -1,4 +1,9 @@
-import { Component, OnInit, ChangeDetectionStrategy, ViewEncapsulation, HostBinding} from '@angular/core';
+import { Component,
+  Renderer2,
+  AfterViewInit,
+  ChangeDetectionStrategy,
+  ViewEncapsulation,
+  HostBinding, ElementRef, ViewChild} from '@angular/core';
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -8,11 +13,13 @@ import { Component, OnInit, ChangeDetectionStrategy, ViewEncapsulation, HostBind
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TabBodyComponent implements OnInit {
+export class TabBodyComponent implements AfterViewInit {
   private readonly _css = 'funky-ngx-tab-body';
-  constructor() { }
+  constructor(private element: ElementRef, private renderer: Renderer2) { }
 
-  ngOnInit() {
+  ngAfterViewInit() {
+    // console.log(this.element.nativeElement);
+    // console.log(this.renderer);
   }
 
   @HostBinding('class')
@@ -20,10 +27,18 @@ export class TabBodyComponent implements OnInit {
     return this._css;
   }
 
-  set cssClass(status: boolean) {
-    // this._css = status
-    // ? '.funky-ngx-tab-group :active .funky-ngx-tab-header + .funky-ngx-tab-body'
-    // : '.funky-ngx-tab-group .funky-ngx-tab-header + .funky-ngx-tab-body';
+  show() {
+    if (this.renderer && this.element) {
+      this.renderer.setStyle(this.element.nativeElement, 'height', '100%');
+      this.renderer.setStyle(this.element.nativeElement, 'overflow', 'visible');
+    }
+  }
+
+  hide() {
+    if ( this.renderer && this.element) {
+      this.renderer.setStyle(this.element.nativeElement, 'height', '0');
+      this.renderer.setStyle(this.element.nativeElement, 'overflow', 'hidden');
+    }
   }
 
 

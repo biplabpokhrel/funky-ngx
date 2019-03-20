@@ -35,24 +35,24 @@
 
 /* .funky-ngx-tab-group :hover .funky-ngx-tab-header{
     background: rgba(250, 249, 249, 0);
-} */
+}
 
 
-/* .funky-ngx-tab-group :active .funky-ngx-tab-header{
+.funky-ngx-tab-group :active .funky-ngx-tab-header{
     background: rgba(219,219,219,0);
 } */
 
-/* .funky-ngx-tab-group :active .funky-ngx-tab-header + .funky-ngx-tab-body{
+.funky-ngx-tab-group :active .funky-ngx-tab-header + .funky-ngx-tab-body{
     height: 100%;
     overflow: visible;
-} */
+}
 
 
 @media (max-width: 768px) {
 
-    /* .funky-ngx-tab-group .funky-ngx-tab-header {
+    .funky-ngx-tab-group .funky-ngx-tab-header {
         width:100%;
-    } */
+    }
 
     .funky-ngx-tab-group .funky-ngx-tab-header + .funky-ngx-tab-body {
         position: static;

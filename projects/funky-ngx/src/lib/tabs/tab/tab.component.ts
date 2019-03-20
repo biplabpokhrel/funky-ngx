@@ -2,7 +2,15 @@ import {
   Component,
   OnInit, Input,
   HostBinding,
-  ChangeDetectionStrategy, ViewEncapsulation, Output, EventEmitter, Optional, ContentChild } from '@angular/core';
+  ChangeDetectionStrategy,
+  ViewEncapsulation,
+  Output,
+  EventEmitter,
+  Optional,
+  ContentChild,
+  ElementRef,
+  Renderer2
+} from '@angular/core';
 import { FunkyTabService } from '../services/funky-tab.service';
 import { TabBodyComponent } from '../tab-body/tab-body.component';
 import { TabHeaderComponent } from '../tab-header/tab-header.component';
@@ -24,7 +32,10 @@ export class TabComponent implements OnInit {
   @ContentChild(TabHeaderComponent) _head: TabHeaderComponent;
 
   @Output() readonly index: EventEmitter<number> = new EventEmitter<number>();
-  constructor(@Optional() private tabService: FunkyTabService) { }
+  constructor(
+    private el: ElementRef,
+    private renderer: Renderer2,
+    @Optional() private tabService: FunkyTabService) { }
 
   ngOnInit() {
   }
@@ -35,6 +46,13 @@ export class TabComponent implements OnInit {
     if ( this.tabService ) {
       this.tabService._selectedTabIndex.next(this.currentIndex);
     }
-    this._content.cssClass = this.isActive;
+  }
+
+  show() {
+    this.renderer.addClass(this.el.nativeElement, 'funky-ngx-tab-container');
+  }
+
+  hide() {
+    this.renderer.removeClass(this.el.nativeElement, 'funky-ngx-tab-container');
   }
 }

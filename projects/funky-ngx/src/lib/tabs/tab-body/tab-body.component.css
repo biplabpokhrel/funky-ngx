@@ -5,8 +5,3 @@
     height: 0;
     overflow: hidden;
 }
-
-.funky-ngx-tab-group :active .funky-ngx-tab-body{
-    height: 100%;
-    overflow: visible;
-}

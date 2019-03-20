@@ -1,4 +1,11 @@
-import { Component, OnInit, ChangeDetectionStrategy, ViewEncapsulation, HostBinding} from '@angular/core';
+import { Component,
+  OnInit,
+  ChangeDetectionStrategy,
+  ViewEncapsulation,
+  HostBinding,
+  Renderer2,
+  ElementRef,
+} from '@angular/core';
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -10,9 +17,16 @@ import { Component, OnInit, ChangeDetectionStrategy, ViewEncapsulation, HostBind
 })
 export class TabHeaderComponent implements OnInit {
   @HostBinding('class') cssClass = 'funky-ngx-tab-header';
-  constructor() { }
+  constructor(private el: ElementRef, private renderer: Renderer2) { }
 
   ngOnInit() {
   }
 
+  show() {
+    this.renderer.addClass(this.el.nativeElement, 'selectedHeader');
+  }
+
+  hide() {
+    this.renderer.removeClass(this.el.nativeElement, 'selectedHeader');
+  }
 }

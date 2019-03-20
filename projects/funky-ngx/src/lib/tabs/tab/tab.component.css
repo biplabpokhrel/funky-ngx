@@ -8,3 +8,14 @@
 .funky-ngx-tab:last-child{
     margin-right: 0;
 }
+
+
+.funky-ngx-tab-container {
+    padding: 0px;
+}
+
+@media (max-width: 768px) {
+    .funky-ngx-tab-container {
+        padding: 1px !important;
+    }
+}
