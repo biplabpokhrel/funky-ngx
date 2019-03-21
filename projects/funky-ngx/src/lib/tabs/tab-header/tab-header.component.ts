@@ -23,10 +23,10 @@ export class TabHeaderComponent implements OnInit {
   }
 
   show() {
-    this.renderer.addClass(this.el.nativeElement, 'selectedHeader');
+    this.renderer.addClass(this.el.nativeElement, 'funky-ngx-header-selected');
   }
 
   hide() {
-    this.renderer.removeClass(this.el.nativeElement, 'selectedHeader');
+    this.renderer.removeClass(this.el.nativeElement, 'funky-ngx-header-selected');
   }
 }

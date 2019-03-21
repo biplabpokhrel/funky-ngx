@@ -1,52 +1,12 @@
-
-.funky-ngx-tab-header{
-    display: block;
-    background: rgba(219,219,219,1);
-    text-decoration: none;
-    color:rgb(7, 7, 7);
-    transition: background 0.5s ease; 
-
-    height: 48px;
-    padding: 16px 24px;
-    cursor: pointer;
-    box-sizing: border-box;
-    /* opacity: .6; */
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    white-space: nowrap;
-    text-decoration: none;
-    position: relative;
-    overflow: hidden;
-    -webkit-tap-highlight-color: transparent;
-    font-family: Roboto,"Helvetica Neue",sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-}
-
-.funky-ngx-tab-header :hover{
-    opacity: 0.6;
-}
-
-.funky-ngx-header-container {
-    padding: 0px;
-}
-
-.selectedHeader {
+.funky-ngx-header-selected{
     border-bottom: 2px solid rgb(52, 3, 99);
+    padding: 15px 24px !important;
+    opacity: 1 !important;
 }
 
 @media (max-width: 768px) {
-    .funky-ngx-tab-header{
-        text-align: left;
-        justify-content: left;
-    }
-
-    .selectedHeader {
+    .funky-ngx-header-selected {
         border: none;
-        box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
-        background: white;
-        color: black;
     }
 
 }

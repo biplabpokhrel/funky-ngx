@@ -1,9 +1,10 @@
-import { Component,
+import {
+  Component,
   Renderer2,
-  AfterViewInit,
   ChangeDetectionStrategy,
   ViewEncapsulation,
-  HostBinding, ElementRef, ViewChild} from '@angular/core';
+  HostBinding, ElementRef
+} from '@angular/core';
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -13,14 +14,9 @@ import { Component,
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TabBodyComponent implements AfterViewInit {
+export class TabBodyComponent  {
   private readonly _css = 'funky-ngx-tab-body';
   constructor(private element: ElementRef, private renderer: Renderer2) { }
-
-  ngAfterViewInit() {
-    // console.log(this.element.nativeElement);
-    // console.log(this.renderer);
-  }
 
   @HostBinding('class')
   get css(): string {
@@ -31,6 +27,7 @@ export class TabBodyComponent implements AfterViewInit {
     if (this.renderer && this.element) {
       this.renderer.setStyle(this.element.nativeElement, 'height', '100%');
       this.renderer.setStyle(this.element.nativeElement, 'overflow', 'visible');
+      this.renderer.addClass(this.element.nativeElement, 'funky-ngx-body-selected');
     }
   }
 
@@ -38,6 +35,7 @@ export class TabBodyComponent implements AfterViewInit {
     if ( this.renderer && this.element) {
       this.renderer.setStyle(this.element.nativeElement, 'height', '0');
       this.renderer.setStyle(this.element.nativeElement, 'overflow', 'hidden');
+      this.renderer.addClass(this.element.nativeElement, 'funky-ngx-body-selected');
     }
   }
 

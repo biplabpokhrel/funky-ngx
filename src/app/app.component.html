@@ -1,6 +1,6 @@
 <router-outlet></router-outlet>
-<funky-ngx-tab-group (selectedIndexChanged)="tabIndex($event)">
-  <funky-ngx-tab (index)="tabIndex($event)" label="One">
+<funky-ngx-tab-group (selectedIndexChanged)="tabIndex($event)" [selectedIndex]="3">
+  <funky-ngx-tab label="One">
     <funky-ngx-tab-header> One </funky-ngx-tab-header>
     <funky-ngx-tab-body> One body </funky-ngx-tab-body>
   </funky-ngx-tab>
@@ -9,11 +9,29 @@
     <funky-ngx-tab-body> two body </funky-ngx-tab-body>
   </funky-ngx-tab>
   <funky-ngx-tab label="three">
-    <funky-ngx-tab-header> three </funky-ngx-tab-header>
+    <funky-ngx-tab-header>
+      this is how I want to design it
+    </funky-ngx-tab-header>
     <funky-ngx-tab-body> three body </funky-ngx-tab-body>
   </funky-ngx-tab>
   <funky-ngx-tab>
       <funky-ngx-tab-header> Four </funky-ngx-tab-header>
-      <funky-ngx-tab-body> four body </funky-ngx-tab-body>
+      <funky-ngx-tab-body> 
+        four body  four body  four body  four body  four body
+        four body  four body  four body  four body  four body
+        four body  four body  four body  four body  four body
+        four body  four body  four body  four body  four body
+        four body  four body  four body  four body  four body
+        four body  four body  four body  four body  four body
+        four body  four body  four body  four body  four body
+        four body  four body  four body  four body  four body
+        four body  four body  four body  four body  four body
+        four body  four body  four body  four body  four body
+        four body  four body  four body  four body  four body
+        four body  four body  four body  four body  four body
+        four body  four body  four body  four body  four body
+        four body  four body  four body  four body  four body
+        four body  four body  four body  four body  four body
+      </funky-ngx-tab-body>
   </funky-ngx-tab>
 </funky-ngx-tab-group>
